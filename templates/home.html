@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <title>Diabetes Risk Prediction</title>
+    <style>
+        body{
+          background-image: url("car.jpg");
+          background-color: rgba(218, 221, 46, 0.986);
+          background-size: cover;
+          text-align: center
+            }
+    
+        #box{
+          width: 200px;
+          height: 50px;
+          text-align: center;
+          font-size: 22px;
+    
+        }
+    
+        #sub{
+          border-radius: 50px 20px;
+          font-size: 22px;
+    
+        }
+        .card{
+          border-radius: 10px 20px;
+          padding: 10px;
+          border-color: green;
+          border-width: 3px;
+          background-color:white
+
+        }
+        
+      </style>
+
+
+</head>
+
+
+<body >
+    <form action= "{{url_for("predict")}}", method="post">
+    <div class="container">
+          
+    <center>
+        <br>
+        <h1>Diabetes Risk Prediction</h1>
+        <br>
+        <div class="row">
+            <div class="col-sm-6">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Number of Pregnancies (0 for male)</h4>
+                  <input type="text", name='Pregnancies', id="box", placeholder="Enter"> <br><br>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Glucose</h4>
+                    <input type="text", name='Glucose', id="box", placeholder="Enter"> <br><br>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+          <br><br>
+        <div class="row">
+            <div class="col-sm-6">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">BloodPressure</h4>
+                  <input type="text", name='BloodPressure', id="box", placeholder="Enter"> <br><br>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">SkinThickness</h4>
+                    <input type="text", name='SkinThickness', id="box", placeholder="Enter"> <br><br>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <br><br>
+        <div class="row">
+            <div class="col-sm-6">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Insulin'</h4>
+                  <input type="text", name='Insulin', id="box", placeholder="Enter"> <br><br>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">BMI</h4>
+                    <input type="text", name='BMI', id="box", placeholder="Enter"> <br><br>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <br><br>
+        <div class="row">
+            <div class="col-sm-6">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">DiabetesPedigreeFunction</h4>
+                  <input type="text", name='DiabetesPedigreeFunction', id="box", placeholder="Enter"> <br><br>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Age</h4>
+                    <input type="text", name='Age', id="box", placeholder="Enter"> <br><br>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+
+    <br><br>
+    <!-- Submit -->
+        <div class="d-grid gap-2 col-6 mx-auto">
+          
+            <input type="submit" id="sub" value="PREDICT" class="btn btn-light btn-lg btn-outline-success" />
+    
+        </div>
+    
+    
+      
+    </div>
+</form>
+
+<br />
+<br />
+<h3>{{ prediction }}</h3>
+
+<br />
+<br />
+<p>©2021 Kranti Wadmare</p>
+
+</center>
+
+<!-- Bootstrap Bundle with Popper -->
+<script
+src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+crossorigin="anonymous"
+></script>
+</body>
+</html>
